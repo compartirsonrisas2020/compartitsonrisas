@@ -1,0 +1,225 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background: url(cielo.jpg);
+	background-size:cover;
+
+}
+.contenedor{
+	width: 90%;
+	max-width:800px;
+	margin: auto;
+	//background: rgb(221, 180, 103);
+	/*nuevo*/
+//	display: flex;
+//  display:inline;
+
+}
+header{
+padding: 40px 0;
+}
+header form{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+header .barra-busqueda{
+  width: 70%;
+	height: 40px;
+	line-height: 40px;
+	padding:0 20px;
+	border-radius: 100px;
+	border: none;
+	text-align: center;
+	font-size: 18px;
+}
+header .categorias{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+}
+header .categorias a{
+	color: #9e9e9e;
+	margin: 10px 20px;
+	font-size: 20px;
+	font-weight: 700;
+	text-decoration: none;;
+}
+header .categorias a.activo{
+	color: #000000;
+}
+h1{
+	text-align: center;
+ color: #000000;
+ font-size: 200%;
+ letter-spacing:5px;
+ text-shadow:5px 5px rgba(255, 255, 255, 0.21);
+	font-family: Algerian;
+	text-decoration: underline;
+
+	font-size: 40px;
+	padding: 20px ;
+	font-weight: 400px;
+}
+
+.grid{
+  position: relative;
+  width: 100%;
+	opacity: 0;
+	transition: opacity 0.5s linear 1s;
+}
+.grid.imagenes-cargadas{
+	opacity: 1;
+}
+.grid .item{
+	position: absolute;
+  display: block;
+  padding: 0;
+  margin: 10px;
+  width: calc(33.3333% - 20px);
+}
+.grid .item img{
+  width: 100%;
+  height: 150px;;
+	cursor: pointer;
+	vertical-align: top;
+}
+.grid .item-contenido{
+	position: relative;
+}
+
+.overlay{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.9);
+	width: 100%
+	height: 100vh; /*vh el tamaño del dispositivo altura*/
+	display: none;
+	align-items: center; /*centra forma vertical */
+	justify-content: center;/*centra forma horizontal*/
+	flex-direction: column;
+}
+.overlay.activo{
+	display: flex;
+
+}
+.overlay img{
+	width: 500px;
+	max-width: 100%;
+}
+.overlay .descripcion{
+	display: block;
+	background: #ffffff;
+	padding: 20px;
+	text-align: center;
+	margin-top: 5px;
+	border-radius: 10px;
+
+}
+.contenedor-img img{
+ max-width: 500px;
+ max-height: 500px;
+ }
+.contenedor-img{
+	position: relative;
+ }
+.overlay #btn-cerrar-popup{
+	background: none;
+	font-size: 20px;
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: -20px;
+	top: -20px;
+}
+.overlay  #btn-atras{
+	background: none;
+	font-size: 20px;
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	left: -25px;
+	top: 150px;
+}
+.overlay #btn-adelante{
+	background: none;
+	font-size: 20px;
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	right: -25px;
+	top: 150px;
+}
+
+/*
+
+CSS DEL FOOTER
+
+*/
+footer .redes-sociales{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding: 20px;
+	flex-wrap: wrap;
+}
+footer .redes-sociales a{
+	display: block;
+	width: 60px;
+	height: 60px;
+	background: #ffffff;
+	margin: 20px;
+	text-align: center;
+	border-radius: 100px;
+	transition: .3s ease all;
+}
+footer .redes-sociales .contenedor-icono .facebook{background: #3265ee;}
+footer .redes-sociales .contenedor-icono .whatsapp{background: #50ee32;}
+footer .redes-sociales .contenedor-icono .instagram{background: #d4178f;}
+
+footer .redes-sociales a i{
+	font-size: 40px;
+	line-height: 60px;
+}
+footer .contenedor-icono:hover a{
+	animation: iconos .5s ease;
+}
+@keyframes iconos {
+	from{
+		transform: rotate3d(0,0,0,0);
+	}
+		to{
+			transform: rotate3d(0,1,0,3600deg);
+		}
+}
+footer .creado-por{
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 14px;
+	color: #4bda4d;
+}
+footer .creado-por a{ color: #000;}
+footer .creado-por a:hover{text-decoration: underline;}
+
+
+/*
+media querys
+*/
+@media screen and (max-width: 700px){
+	.grid .item {
+		width: calc(50% - 20px);
+	}
+	header .barra-busqueda{
+		width: 100%;
+	}
